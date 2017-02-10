@@ -136,6 +136,10 @@
         selectLab.centerY = kTitlesLabelCenterY - 3;
         [UIView commitAnimations];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(sliderDidChanged:index:)]) {
+        [self.delegate sliderDidChanged:self index:self.slider.index];
+    }
 }
 
 
