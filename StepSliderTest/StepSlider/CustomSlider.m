@@ -84,7 +84,7 @@
     _normalBackgroundColor = normalBackgroundColor;
     for (int i = 0; i < self.titleLabels.count; i ++) {
         if (i == self.slider.index) {
-            break;
+            continue;
         }
         UILabel *lab = self.titleLabels[i];
         lab.backgroundColor = normalBackgroundColor;
@@ -97,7 +97,7 @@
     _normalFont = normalFont;
     for (int i = 0; i < self.titleLabels.count; i ++) {
         if (i == self.slider.index) {
-            break;
+            continue;
         }
         UILabel *lab = self.titleLabels[i];
         lab.font = normalFont;
@@ -109,9 +109,6 @@
     _titleColor = titleColor;
     
     for (int i = 0; i < self.titleLabels.count; i ++) {
-        if (i == self.slider.index) {
-            break;
-        }
         UILabel *lab = self.titleLabels[i];
         lab.textColor = titleColor;
     }
