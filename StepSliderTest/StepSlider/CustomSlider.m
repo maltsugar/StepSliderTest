@@ -155,7 +155,7 @@
     float labW = (width - 2*maxRadius) / (self.titleLabels.count-1);
     for (int i = 0; i < self.titleLabels.count; i ++) {
         UILabel *lab = self.titleLabels[i];
-        lab.centerX = i * labW + 0.5*lab.width;
+        lab.centerX = i * labW + maxRadius;
         lab.centerY = kTitlesLabelCenterY;
     }
     
