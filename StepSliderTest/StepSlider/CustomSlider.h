@@ -37,4 +37,7 @@
 
 - (void)setTitles:(NSArray *)titles shouldAnmating:(BOOL)animate;
 
+// 设置个数
+- (void)setSliderCount:(NSUInteger)count;
+
 @end

@@ -79,6 +79,22 @@
     [self layoutIfNeeded];
 }
 
+- (void)setSliderCount:(NSUInteger)count
+{
+    [self.titleLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.titleLabels removeAllObjects];
+    
+    [self addSubview:self.slider];
+    _slider.tintColor = [UIColor blueColor];
+    _slider.trackColor = [UIColor grayColor];
+    _slider.maxCount = count;
+    _slider.sliderCircleRadius = 10.0; // slider高度为直径
+    _slider.trackHeight = 5.0;
+    _slider.sliderCircleColor = [UIColor orangeColor];
+    
+    [self layoutIfNeeded];
+}
+
 - (void)setNormalBackgroundColor:(UIColor *)normalBackgroundColor
 {
     _normalBackgroundColor = normalBackgroundColor;
