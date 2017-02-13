@@ -31,6 +31,14 @@
     }
     return self;
 }
+- (instancetype)initWithCount:(NSUInteger)count
+{
+    self = [super init];
+    if (self) {
+        [self initSliderWithCount:count];
+    }
+    return self;
+}
 
 - (void)initTitleLabels:(NSArray *)titles
 {
@@ -59,10 +67,15 @@
         lab.width += 10;
     }
     
+    [self initSliderWithCount:titles.count];
+}
+
+- (void)initSliderWithCount:(NSUInteger)count
+{
     [self addSubview:self.slider];
     _slider.tintColor = [UIColor blueColor];
     _slider.trackColor = [UIColor grayColor];
-    _slider.maxCount = titles.count;
+    _slider.maxCount = count;
     _slider.sliderCircleRadius = 10.0; // slider高度为直径
     _slider.trackHeight = 5.0;
     _slider.sliderCircleColor = [UIColor orangeColor];
@@ -84,13 +97,7 @@
     [self.titleLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.titleLabels removeAllObjects];
     
-    [self addSubview:self.slider];
-    _slider.tintColor = [UIColor blueColor];
-    _slider.trackColor = [UIColor grayColor];
-    _slider.maxCount = count;
-    _slider.sliderCircleRadius = 10.0; // slider高度为直径
-    _slider.trackHeight = 5.0;
-    _slider.sliderCircleColor = [UIColor orangeColor];
+    [self initSliderWithCount:count];
     
     [self layoutIfNeeded];
 }
