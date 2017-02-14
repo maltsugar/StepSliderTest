@@ -30,11 +30,12 @@
     
     CustomSlider *slider = [[CustomSlider alloc]initWithTitles:@[@"30分钟", @"1小时", @"1.5小时", @"2小时", @"3小时", @"4小时", @"6小时"] shouldAnmating:YES];
 //    CustomSlider *slider = [[CustomSlider alloc]initWithCount:10];
-    slider.frame = CGRectMake(20, 200, CGRectGetWidth([[UIScreen mainScreen] bounds]) - 2*20, 40);
+    slider.frame = CGRectMake(10, 200, CGRectGetWidth([[UIScreen mainScreen] bounds]) - 2*10, 40);
     slider.titleColor = [UIColor orangeColor];
     slider.normalBackgroundColor = [UIColor clearColor];
     slider.selectedBackgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     slider.delegate = self;
+    slider.slider.sliderCircleImage = [UIImage imageNamed:@"na_choumaslider"];
     [self.view addSubview:slider];
 }
 
