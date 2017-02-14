@@ -101,7 +101,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
     [self addLayers];
     
     _maxCount           = 4;
-    _index              = 2;
+    _index              = 0;
     _trackHeight        = 4.f;
     _trackCircleRadius  = 5.f;
     _sliderCircleRadius = 12.5f;

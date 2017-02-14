@@ -162,6 +162,12 @@
     }
 }
 
+- (void)sliderValueChangedAction
+{
+    if ([self.delegate respondsToSelector:@selector(sliderValueChanged:value:)]) {
+        [self.delegate sliderValueChanged:self value:self.slider.index];
+    }
+}
 
 
 #pragma mark-
@@ -201,6 +207,7 @@
         _slider = [[StepSlider alloc]init];
         _slider.dotsInteractionEnabled = NO;
         [_slider addTarget:self action:@selector(handleSliderAction) forControlEvents:UIControlEventTouchUpInside];
+        [_slider addTarget:self action:@selector(sliderValueChangedAction) forControlEvents:UIControlEventValueChanged];
     }
     return _slider;
 }

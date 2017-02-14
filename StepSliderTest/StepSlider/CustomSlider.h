@@ -15,6 +15,8 @@
 
 - (void)sliderDidChanged:(CustomSlider *)slider index:(NSUInteger)idx;
 
+- (void)sliderValueChanged:(CustomSlider *)slider value:(NSUInteger)val;
+
 @end
 
 

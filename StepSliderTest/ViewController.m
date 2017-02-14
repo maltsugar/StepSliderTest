@@ -41,7 +41,12 @@
 
 - (void)sliderDidChanged:(CustomSlider *)slider index:(NSUInteger)idx
 {
-    NSLog(@"%@  %d", slider, idx);
+    NSLog(@"%@  %zd", slider, idx);
+}
+
+- (void)sliderValueChanged:(CustomSlider *)slider value:(NSUInteger)val
+{
+    NSLog(@"%@  %zd", slider, val);
 }
 
 @end
