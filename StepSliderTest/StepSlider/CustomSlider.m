@@ -137,6 +137,29 @@
     }
 }
 
+- (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor
+{
+    _selectedBackgroundColor = selectedBackgroundColor;
+    for (int i = 0; i < self.titleLabels.count; i ++) {
+        if (i == self.slider.index) {
+            UILabel *lab = self.titleLabels[i];
+            lab.backgroundColor = self.selectedBackgroundColor;
+            continue;
+        }
+    }
+}
+
+- (void)setSelectedFont:(UIFont *)selectedFont
+{
+    _selectedFont = selectedFont;
+    for (int i = 0; i < self.titleLabels.count; i ++) {
+        if (i == self.slider.index) {
+            UILabel *lab = self.titleLabels[i];
+            lab.font = self.selectedFont;
+            continue;
+        }
+    }
+}
 
 
 #pragma mark- sliderAction
