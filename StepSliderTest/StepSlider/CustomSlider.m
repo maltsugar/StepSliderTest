@@ -144,7 +144,7 @@
         if (i == self.slider.index) {
             UILabel *lab = self.titleLabels[i];
             lab.backgroundColor = self.selectedBackgroundColor;
-            continue;
+            break;
         }
     }
 }
@@ -156,7 +156,7 @@
         if (i == self.slider.index) {
             UILabel *lab = self.titleLabels[i];
             lab.font = self.selectedFont;
-            continue;
+            break;
         }
     }
 }
